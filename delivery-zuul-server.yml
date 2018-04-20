@@ -31,7 +31,7 @@ zuul:
   routes:
     auth-service:
         path: /uaa/**
-        url: http://delivery-auth-server:9092
+        serviceId: delivery-auth-server
         stripPrefix: false
         sensitiveHeaders:
 
