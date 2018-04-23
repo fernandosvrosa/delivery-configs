@@ -10,19 +10,13 @@ eureka:
   server:
     wait-time-in-ms-when-sync-empty: 3000
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 20000
-
 ribbon:
-  ReadTimeout: 20000
-  ConnectTimeout: 20000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 3
+  OkToRetryOnAllOperations: true
 
 zuul:
+  retryable: true
   ignoredServices: '*'
   host:
     connect-timeout-millis: 20000
