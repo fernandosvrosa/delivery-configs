@@ -15,6 +15,14 @@ ribbon:
   MaxAutoRetriesNextServer: 3
   OkToRetryOnAllOperations: true
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
 zuul:
   retryable: true
   ignoredServices: '*'
